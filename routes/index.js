@@ -6,7 +6,9 @@ require ('dotenv').config();
 
 const api = process.env.NPMJS_API_KEY;
 
-
+router.use((req, res, next) => {
+    res.status(404).json({ message: "La page demandée n'a pas été trouvée" });
+  });
 //requête vers le webservice The Movie Database afin de récupérer les dernières "découvertes"
 
 router.get('/movies', (req, res) => {
