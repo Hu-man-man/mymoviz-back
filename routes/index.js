@@ -13,9 +13,10 @@ router.get('/movies', (req, res) => {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api}`)
     .then(response =>response.json())
     .then(apiData=> {
-        res.json(apiData.results);
-        
+        console.log('fetch', apiData.page)
+        res.json(apiData.results);  
     })
+    .catch((error) => console.log("error", error))
 })
 
 
