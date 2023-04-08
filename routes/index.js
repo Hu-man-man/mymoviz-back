@@ -9,7 +9,7 @@ const api = process.env.NPMJS_API_KEY;
 
 //requête vers le webservice The Movie Database afin de récupérer les dernières "découvertes"
 
-router.get('/', (req, res) => {
+router.get('/movies', (req, res) => {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api}`)
     .then(response =>response.json())
     .then(apiData=> {
